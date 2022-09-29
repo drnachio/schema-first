@@ -15,7 +15,12 @@ const model = modelChecker({
       },
       defaultView: {
         type: 'tabular',
-        fields: ['title', 'description', 'parentGroup.title'],
+        fields: [
+          'title',
+          'description',
+          'parentGroup.title',
+          'parentGroup.parentGroup.description',
+        ],
       },
     },
     categories: {
@@ -46,10 +51,12 @@ const model = modelChecker({
       defaultView: {
         type: 'tabular',
         fields: ['name', 'category.title'],
-        sort: 'category.description asc',
+        sort: 'category.group.parentGroup.description desc',
       },
     },
   },
 });
+
+export type BaseModel = typeof model;
 
 export default model;

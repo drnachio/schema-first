@@ -1,4 +1,8 @@
+import { Fields } from "./fields";
+import { Icon } from "./icons";
 import { Model } from "./model";
+import { Pluralized } from "./pluralized";
+import { ViewPreset, Views } from "./views";
 
 export type Table<T extends Model<T>, TableName extends keyof T['schema']> = {
   /**

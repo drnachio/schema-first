@@ -1,4 +1,4 @@
-import { Model } from "./model";
+import { Model } from './model';
 
 type MaxDepthInRelatedField = 5;
 type BasicFieldTypes = 'string' | 'date';
